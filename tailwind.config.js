@@ -7,7 +7,7 @@ module.exports = {
       colors: {
         cstm_dark_bg: "#1A1A1A",
         cstm_purple: "#723FEB",
-        cstm_blue: "#97E0F7",
+        cstm_blue: "#0052FF",
         cstm_white: "#FCFCFC",
       },
     },
