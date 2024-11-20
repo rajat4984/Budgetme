@@ -23,6 +23,7 @@ import * as SecureStore from "expo-secure-store";
 import { createStackNavigator } from "@react-navigation/stack";
 import homeScreen from "./index";
 import loginScreen from "./(auth)/Login";
+import singupScreen from "./(auth)/Signup";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -62,6 +63,7 @@ if (!publishableKey) {
 export type RootStackParamList = {
   Home: undefined; // Home screen doesn't take any parameters
   Login: undefined; // Profile screen doesn't take any parameters
+  Signup: undefined;
 };
 
 export default function RootLayout() {
@@ -107,6 +109,9 @@ export default function RootLayout() {
             </Stack.Group>
             <Stack.Group screenOptions={{ presentation: "modal" }}>
               <Stack.Screen name="Login" component={loginScreen} />
+            </Stack.Group>
+            <Stack.Group screenOptions={{ presentation: "modal" }}>
+              <Stack.Screen name="Signup" component={singupScreen} />
             </Stack.Group>
           </Stack.Navigator>
         </ThemeProvider>
