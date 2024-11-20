@@ -1,34 +1,15 @@
-import { View, Text, Modal, TouchableOpacity } from "react-native";
-import React, { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "expo-image";
-import LoginModal from "@/components/custom/LoginModal";
-import GestureRecognizer from "react-native-swipe-gestures";
 import { useNavigation } from "expo-router";
 import { RootStackParamList } from "./_layout";
 import { NavigationProp } from "@react-navigation/native";
 
 export default function index() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
-  const config = {
-    velocityThreshold: 0.3,
-    directionalOffsetThreshold: 80,
-  };
-
   return (
     <SafeAreaView className="bg-cstm_dark_bg flex-1 items-center">
-      <GestureRecognizer
-        config={config}
-        className="bg-white flex-1"
-        onSwipeDown={() => setIsModalVisible(false)}
-      >
-        <Modal visible={isModalVisible} animationType="slide">
-          <LoginModal setIsModalVisible={setIsModalVisible} />
-        </Modal>
-      </GestureRecognizer>
-
       <View>
         <Text className="text-white text-3xl font-bold my-12">
           Budget<Text className="text-cstm_blue">Me</Text>
@@ -80,11 +61,7 @@ export default function index() {
             Continue with Email
           </Text>
         </TouchableOpacity>
-        {/* <View className="flex-1 items-center">
-          <Text className="text-gray-400 underline text-xs">
-            Continue with more options
-          </Text>
-        </View> */}
+
       </View>
     </SafeAreaView>
   );
