@@ -9,11 +9,11 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import React, { useState } from "react";
-import { SafeAreaView, useSafeAreaFrame } from "react-native-safe-area-context";
 import GestureRecognizer from "react-native-swipe-gestures";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { RootStackParamList } from "../_layout";
 import Ionicons from "@expo/vector-icons/Ionicons";
+
 
 export default function LoginModal() {
   const [authForm, setAuthForm] = useState({
@@ -25,11 +25,11 @@ export default function LoginModal() {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const handleLogin = () => {
-    alert('login')
+    alert("login");
   };
 
   const handleSignUp = () => {
-    alert('signup')
+    alert("signup");
   };
 
   return (
